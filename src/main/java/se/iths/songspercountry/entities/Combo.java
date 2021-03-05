@@ -5,23 +5,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Combo")
+@Table(name = "Combo")
 public class Combo {
 
     @Id
     private String countryCode;
     private String countryName;
-    private String songName;
+    private String title;
     private Long songId;
 
 
     public Combo() {
     }
 
-    public Combo(String countryCode, String countryName, String songName, Long songId) {
+    public Combo(String countryCode, String countryName, String title, Long songId) {
         this.countryCode = countryCode;
         this.countryName = countryName;
-        this.songName = songName;
+        this.title = title;
         this.songId = songId;
     }
 
@@ -41,12 +41,12 @@ public class Combo {
         this.countryName = countryName;
     }
 
-    public String getSongName() {
-        return songName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setSongName(String songName) {
-        this.songName = songName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Long getSongId() {
@@ -55,5 +55,15 @@ public class Combo {
 
     public void setSongId(Long songId) {
         this.songId = songId;
+    }
+
+    @Override
+    public String toString() {
+        return "Combo{" +
+                "countryCode='" + countryCode + '\'' +
+                ", countryName='" + countryName + '\'' +
+                ", songName='" + title + '\'' +
+                ", songId=" + songId +
+                '}';
     }
 }
